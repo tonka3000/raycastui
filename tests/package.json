@@ -1,0 +1,49 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "raycastui-tests",
+  "title": "RaycastUI Tests",
+  "description": "This is a test extension for RaycastUI",
+  "icon": "command-icon.png",
+  "author": "tonka3000",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "test",
+      "title": "Test",
+      "description": "Test Command",
+      "mode": "view"
+    },
+    {
+      "name": "menucmd",
+      "title": "Menu",
+      "description": "A test menu command",
+      "mode": "menu-bar"
+    },
+    {
+      "name": "menuonly",
+      "title": "Menu Only",
+      "description": "A test menu command with only the root menu",
+      "mode": "menu-bar"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.64.5",
+    "@raycast-community/ui": "file:../"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "20.8.10",
+    "@types/react": "18.2.27",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "watch-build" : "tsc --watch --noEmit",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}

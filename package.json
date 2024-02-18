@@ -1,0 +1,46 @@
+{
+  "name": "@raycast-community/ui",
+  "description": "Components and Utils for Raycast extensions",
+  "version": "0.1.0",
+  "author": "tonka3000",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "@raycast/api": ">=1.64.0"
+  },
+  "keywords": [
+    "Raycast",
+    "utilities",
+    "extensions"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@raycast/api": "1.64.0",
+    "@types/node": "^20.8.10",
+    "@types/react": "^18.2.27",
+    "@typescript-eslint/eslint-plugin": "6.7.5",
+    "@typescript-eslint/parser": "6.7.5",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.28.1",
+    "eslint-plugin-jest": "27.4.2",
+    "eslint-plugin-prettier": "5.0.0",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "buildray": "ray build -e dist",
+    "dev": "tsc --watch",
+    "lint": "eslint src/",
+    "prettier": "prettier --check src docs/**.md *.md",
+    "fix-prettier": "prettier --write src docs/**.md *.md",
+    "test": "npm run lint",
+    "prepublishOnly": "npm run build && npm test"
+  }
+}

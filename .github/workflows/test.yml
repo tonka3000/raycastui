@@ -1,0 +1,38 @@
+name: Test
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - "*"
+      - "!main"
+  push:
+    branches:
+      - "*"
+      - "!main"
+
+jobs:
+  tests:
+    if: github.repository == 'tonka3000/raycastui'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: raycast/github-actions/setup-node@v1.16.0
+        with:
+          node-version: 20
+      - name: Npm Install
+        run: npm ci
+      - name: Npm Lint
+        run: npm run test
+      - name: Prettier
+        run: npm run prettier
+      - name: Build
+        run: npm run build
+      - name: Npm Install Tests
+        run: npm ci
+        working-directory: ./tests
+      - name: Build tests
+        run: npm run build
+        working-directory: ./tests
