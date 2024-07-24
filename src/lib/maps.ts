@@ -24,7 +24,7 @@ export async function openInMaps({ coordinates: c, mapType }: MapsQuery) {
   const up = new URL("maps://maps.apple.com/");
   const mt = mapType ? mapTypeMapping[mapType] : undefined;
   if (c) {
-    up.searchParams.set("ll", `${c.long},${c.lat}`);
+    up.searchParams.set("q", `${c.lat},${c.long}`);
   }
   if (mt) {
     up.searchParams.set("t", mt);
