@@ -52,7 +52,7 @@ export default function MyTest() {
           title="Maps"
           actions={
             <ActionPanel>
-              <Action.OpenMaps title="Coordinates" coordinates={{ long: 51.5007292, lat: -0.1272003 }} />
+              <Action.OpenMaps title="Coordinates" coordinates={{ lat: 51.5007292, long: -0.1272003 }} />
               <Action.OpenMaps title="Map Type" mapType="Satellite" />
             </ActionPanel>
           }
