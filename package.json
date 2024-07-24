@@ -1,7 +1,7 @@
 {
   "name": "@raycast-community/ui",
   "description": "Components and Utils for Raycast extensions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "tonka3000",
   "license": "MIT",
   "main": "dist/index.js",
